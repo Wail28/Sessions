@@ -1,0 +1,43 @@
+/* #boxes{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+#red{
+    width: 250px;
+    height: 250px;
+    background-color:rgb(203, 52, 52);
+    display: none;
+}
+#blue{
+    width: 250px;
+    height: 250px;
+    background-color:rgb(18, 158, 209);
+    display: none;
+}
+#green{
+    width: 250px;
+    height: 250px;
+    background-color:rgb(21, 220, 91);
+    display: none;
+} */
+
+/* #nav{
+    background-color: cadetblue;
+    list-style: none;
+    display: flex;
+} */
+
+#imgs{
+    display: flex;
+}
+.img{
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
+#dis{
+    height: 300px;
+    width: 300px;
+}

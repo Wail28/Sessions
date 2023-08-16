@@ -1,0 +1,6 @@
+body{
+    background-color:rgb(245, 242, 255);
+}
+.container{
+    background: linear-gradient(rgb(138, 138, 138),rgb(208, 225, 255));
+}
