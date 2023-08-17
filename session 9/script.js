@@ -3,12 +3,12 @@ let productPrice = document.getElementById("price");
 let productCategory = document.getElementById("category");
 let productDescription = document.getElementById("description");
 let Sbtn = document.getElementById("Sbtn");
-let Ubtn = document.getElementById("Ubtn")
+let Ubtn = document.getElementById("Ubtn");
 let arrProduct = [];
 
 if (localStorage.getItem("products") != null) {
   arrProduct = JSON.parse(localStorage.getItem("products"));
-  loopData()
+  loopData();
 }
 
 Sbtn.addEventListener("click", () => {
@@ -49,17 +49,30 @@ function clearData() {
   productCategory.value = "";
   productDescription.value = "";
 }
-function deleteData(element){
-     arrProduct.splice(element,1)
-     loopData()
-     localStorage.setItem("products",JSON.stringify(arrProduct))
+function deleteData(element) {
+  arrProduct.splice(element, 1);
+  loopData();
+  localStorage.setItem("products", JSON.stringify(arrProduct));
 }
 
-function updateData(element){
-    productName.value = arrProduct[element].pname
-    productPrice.value =      arrProduct[element].pprice
-    productCategory.value =         arrProduct[element].pcat
-    productDescription.value =        arrProduct[element].pdesc
-    Ubtn.style.display="block"
-    Sbtn.style.display="none"
+function updateData(element) {
+  y=element
+  productName.value = arrProduct[element].pname;
+  productPrice.value = arrProduct[element].pprice;
+  productCategory.value = arrProduct[element].pcat;
+  productDescription.value = arrProduct[element].pdesc;
+  Ubtn.style.display = "block";
+  Sbtn.style.display = "none";
 }
+
+Ubtn.addEventListener('click', ()=>{
+  arrProduct[y].pname = productName.value
+  arrProduct[y].pprice = productPrice.value
+  arrProduct[y].pcat = productCategory.value
+  arrProduct[y].pdesc = productDescription.value
+  Ubtn.style.display = "none";
+  Sbtn.style.display = "block";
+  localStorage.setItem("products",JSON.stringify(arrProduct));
+  loopData()
+  clearData()
+})
